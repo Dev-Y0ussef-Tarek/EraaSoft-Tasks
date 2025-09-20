@@ -1,0 +1,37 @@
+CREATE TABLE Doctor (
+    id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    salary NUMBER,
+    address VARCHAR2(100)
+);
+---------------------------------------------------
+--Insert values
+INSERT INTO Doctor (id, name, salary, address) VALUES (1, 'Ali', 5000, 'Cairo');
+INSERT INTO Doctor (id, name, salary, address) VALUES (2, 'Mona', 7000, 'Giza');
+INSERT INTO Doctor (id, name, salary, address) VALUES (3, 'Khaled', 12000, 'Alex');
+INSERT INTO Doctor (id, name, salary, address) VALUES (4, 'Sara', 8000, 'Mansora');
+INSERT INTO Doctor (id, name, salary, address) VALUES (5, 'Omar', 6000, 'Luxor');
+INSERT INTO Doctor (id, name, salary, address) VALUES (6, 'Hany', 9000, 'Aswan');
+INSERT INTO Doctor (id, name, salary, address) VALUES (7, 'Rania', 11000, 'Tanta');
+INSERT INTO Doctor (id, name, salary, address) VALUES (8, 'Yasser', 4000, 'Ismailia');
+INSERT INTO Doctor (id, name, salary, address) VALUES (9, 'Nadia', 10000, 'Suez');
+INSERT INTO Doctor (id, name, salary, address) VALUES (10, 'Mostafa', 3000, 'Port Said');
+-----------------------------------------------------
+--Update values
+UPDATE Doctor SET salary = 20000 WHERE id = 3;
+----------------------------------------------------
+--Delete record
+DELETE FROM Doctor WHERE id = 9;
+-------------------------------------------
+--Concatenation
+SELECT name || ' - ' || salary AS name_salary FROM Doctor;
+--------------------------------------------------------------
+SELECT id, name, salary, salary * 2 , address FROM Doctor;
+-------------------------------------------------------------
+SELECT *
+FROM Doctor
+WHERE salary IN (1000, 2000, 3000);
+--------------------------------------------------------
+ALTER TABLE Doctor RENAME TO PRD_DOCTOR;
+
+

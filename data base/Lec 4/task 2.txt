@@ -1,0 +1,21 @@
+SELECT REPLACE('database', 'a', '@') AS RESULT FROM dual;
+----------------------------------------------------------
+SELECT REPLACE('This is an old version', 'old', 'new') AS RESULT FROM dual;
+-----------------------------------------------------------------------------
+CREATE TABLE PRODUCT (
+    product_name VARCHAR2(50)
+);
+
+INSERT INTO PRODUCT (product_name) VALUES ('Laptop');
+INSERT INTO PRODUCT (product_name) VALUES ('Phone');
+INSERT INTO PRODUCT (product_name) VALUES ('Tablet');
+-------------------------------------------------------
+SELECT product_name,
+       LPAD(product_name, 15, '*') AS PADDED_LEFT
+FROM PRODUCT;
+---------------------------------------------------------
+SELECT product_name,
+       RPAD(product_name, 15, '#') AS PADDED_RIGHT
+FROM PRODUCT;
+-------------------------------------------------------
+

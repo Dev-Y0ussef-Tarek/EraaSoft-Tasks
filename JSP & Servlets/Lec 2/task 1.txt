@@ -1,0 +1,57 @@
+HTML File
+------------
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+    <h2>Enter Your Information</h2>
+    <form action="DisplayServlet" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+------------------------------------------------------------------------------------
+DisplayServlet.java
+--------------------
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/DisplayServlet")
+public class DisplayServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+
+        
+        String fullname = request.getParameter("fullname");
+        String age = request.getParameter("age");
+
+       
+        response.setContentType("text/html");
+
+        
+        PrintWriter printWriter = response.getWriter();
+       
+        printWriter.println("<h2>User Information</h2>");
+        printWriter.println("<p><b>Full Name:</b> " + fullname + "</p>");
+        printWriter.println("<p><b>Age:</b> " + age + "</p>");
+        
+    }
+}
+----------------------------------------------------------------------------------------

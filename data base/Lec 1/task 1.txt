@@ -1,0 +1,46 @@
+--Create Manger
+
+CREATE TABLE Manger (
+    id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    age NUMBER,
+    birth_date DATE,
+    address VARCHAR2(100)
+);
+
+------------------------------------------------
+-- Delete column address
+
+ALTER TABLE Manger DROP COLUMN address;
+
+
+-- Add column (city_address, street)
+
+ALTER TABLE Manger ADD (
+    city_address VARCHAR2(100),
+    street VARCHAR2(100)
+);
+
+------------------------------------------------
+-- name to full_name
+ALTER TABLE Manger RENAME COLUMN name TO full_name;
+
+------------------------------------------------
+-- Read only
+ALTER TABLE Manger READ ONLY;
+
+------------------------------------------------
+-- create table same as Manger with name Owner just has colum id, name, birth_date
+CREATE TABLE Owner AS
+SELECT id, full_name AS name, birth_date
+FROM Manger;
+
+------------------------------------------------
+-- Rename
+ALTER TABLE Manger RENAME TO Master;
+
+------------------------------------------------
+-- Delete all tables
+
+DROP TABLE Owner PURGE;
+DROP TABLE Master PURGE;

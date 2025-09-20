@@ -1,0 +1,187 @@
+CREATE TABLE customers (
+    full_name VARCHAR2(50)
+);
+
+INSERT INTO customers VALUES ('   Ali   ');
+INSERT INTO customers VALUES ('   Sara');
+INSERT INTO customers VALUES ('Omar   ');
+INSERT INTO customers VALUES ('   Mona   ');
+INSERT INTO customers VALUES ('#Hassan#');
+--------------------------------------------------------
+SELECT full_name,
+       TRIM(full_name) AS trimmed_name
+FROM customers;
+
+SELECT full_name,
+       LTRIM(full_name) AS no_leading_spaces
+FROM customers;
+
+SELECT full_name,
+       RTRIM(full_name) AS no_trailing_spaces
+FROM customers;
+
+SELECT full_name,
+       TRIM(BOTH '#' FROM full_name) AS removed_hash
+FROM customers;
+
+--------------------------------------------------------------
+SELECT REPLACE('promotion', 'o', '0') AS result
+FROM dual;
+
+SELECT REPLACE('This is a basic course', 'basic', 'advanced') AS result
+FROM dual;
+
+CREATE TABLE departments (
+    dept_name VARCHAR2(50)
+);
+
+INSERT INTO departments VALUES ('HR');
+INSERT INTO departments VALUES ('IT');
+INSERT INTO departments VALUES ('Sales');
+
+SELECT dept_name,
+       LPAD(dept_name, 15, '*') AS padded_left
+FROM departments;
+
+SELECT dept_name,
+       RPAD(dept_name, 15, '-') AS padded_right
+FROM departments;
+
+-------------------------------------------------------------------
+SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY') AS today
+FROM dual;
+
+SELECT TO_CHAR(SYSDATE, 'Day, Month YYYY') AS today
+FROM dual;
+
+SELECT TO_CHAR(12345.67, '99,999.99') AS formatted_number
+FROM dual;
+
+SELECT salary,
+       TO_CHAR(salary, '$99,999.00') AS formatted_salary
+FROM employees;
+
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') AS full_datetime
+FROM dual;
+
+----------------------------------------------------------------------
+CREATE TABLE students (
+    name  VARCHAR2(50),
+    score NUMBER(3)
+);
+
+INSERT INTO students VALUES ('Ali', 95);
+INSERT INTO students VALUES ('Sara', 82);
+INSERT INTO students VALUES ('Omar', 76);
+INSERT INTO students VALUES ('Mona', 65);
+INSERT INTO students VALUES ('Hassan', 58);
+
+SELECT name, score,
+       CASE
+           WHEN score >= 90 THEN 'A'
+           WHEN score BETWEEN 80 AND 89 THEN 'B'
+           WHEN score BETWEEN 70 AND 79 THEN 'C'
+           ELSE 'F'
+       END AS grade
+FROM students;
+
+
+SELECT name, score,
+       CASE
+           WHEN score >= 60 THEN 'Pass'
+           ELSE 'Fail'
+       END AS result
+FROM students;
+
+
+SELECT name, score,
+       CASE
+           WHEN score >= 90 THEN 'Excellent'
+           WHEN score BETWEEN 80 AND 89 THEN 'Good'
+           WHEN score BETWEEN 70 AND 79 THEN 'Average'
+           ELSE 'Needs Improvement'
+       END AS remarks
+FROM students;
+
+SELECT 'Today is ' || TO_CHAR(SYSDATE, 'Day') AS today_message
+FROM dual;
+
+--------------------------------------------------------------------
+SELECT name, score,
+       DECODE(score,
+              100, 'A',
+              90,  'B',
+              80,  'C',
+              'F') AS grade
+FROM students;
+
+CREATE TABLE status_log (
+    status_code CHAR(1)
+);
+
+INSERT INTO status_log VALUES ('N');
+INSERT INTO status_log VALUES ('I');
+INSERT INTO status_log VALUES ('C');
+
+SELECT status_code,
+       DECODE(status_code,
+              'N', 'New',
+              'I', 'In Progress',
+              'C', 'Completed',
+              'Unknown') AS status_text
+FROM status_log;
+
+SELECT product_name, quantity,
+       DECODE(quantity,
+              0, 'Out of Stock',
+              'Available') AS availability
+FROM products;
+
+SELECT dept_name,
+       DECODE(dept_name,
+              'HR', 500,
+              'IT', 1000,
+              'Sales', 1500,
+              300) AS bonus
+FROM departments;
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

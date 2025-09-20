@@ -1,0 +1,42 @@
+SELECT * FROM employees WHERE emp_id BETWEEN 100 AND 105;
+-------------------------------------------------------------
+SELECT * FROM employees WHERE emp_id IN (151, 152, 153, 154, 155);
+---------------------------------------------------------------------
+SELECT * FROM employees WHERE LOWER(first_name) LIKE 'p%';
+----------------------------------------------------------------
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '%a';
+----------------------------------------------------------------
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '%a%';
+--------------------------------------------------------------
+SELECT * FROM employees WHERE LOWER(first_name) LIKE '__e%';
+---------------------------------------------------------------
+SELECT * FROM employees WHERE manager_id IS NULL;
+-----------------------------------------------------
+SELECT * FROM employees WHERE manager_id IS NOT NULL;
+--------------------------------------------------------
+INSERT INTO employees (emp_id, first_name, last_name, job_id, manager_id, hire_date, salary)
+VALUES (999, 'Ali', 'Hassan', 'IT_PROG', NULL, SYSDATE, 5000);
+---------------------------------------------------------------------------------------------
+SELECT * FROM employees WHERE job_id IN ('AD_VP', 'IT_PROG');
+----------------------------------------------------------------
+SELECT * FROM employees ORDER BY last_name asc;
+------------------------------------------------
+SELECT * FROM employees ORDER BY hire_date desc;
+----------------------------------------------------
+SELECT * FROM employees
+ORDER BY department_id ASC, salary DESC;
+------------------------------------------------
+SELECT LOWER(last_name) AS last_name FROM employees;
+-------------------------------------------------------------
+SELECT  UPPER(first_name) AS first_name FROM employees;
+----------------------------------------------------------------
+SELECT INITCAP(first_name) AS first_name, INITCAP(last_name) AS last_name FROM employees;
+---------------------------------------------------------------------------------------------------
+SELECT * FROM employees WHERE LOWER(last_name) = 'smith';
+-----------------------------------------------------------------
+
+
+
+
+
+

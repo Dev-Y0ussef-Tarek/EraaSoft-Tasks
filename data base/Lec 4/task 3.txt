@@ -1,0 +1,11 @@
+SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYY') AS TODAY_DATE FROM dual;
+------------------------------------------------------------------
+SELECT TO_CHAR(SYSDATE, 'Month YYYY') AS TODAY_DATE FROM dual;
+---------------------------------------------------------------
+SELECT TO_CHAR(12345.67, '99,999.99') AS FORMATTED_NUMBER
+FROM dual;
+--------------------------------------------------------------
+SELECT salary,
+       TO_CHAR(salary, '$99,999.00') AS SALARY_WITH_CURRENCY
+FROM dual;
+---------------------------------------------------------------------

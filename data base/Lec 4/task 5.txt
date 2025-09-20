@@ -1,0 +1,30 @@
+SELECT name,
+       marks,
+       DECODE(TRUNC(marks/10),
+              9, 'A',         
+              10, 'A',        
+              8, 'B',         -- 80–89
+              7, 'C',         
+              'F') AS grade 
+FROM STUDENTS;
+------------------------------------------
+CREATE TABLE ORDERS (
+    order_id NUMBER,
+    status   CHAR(1)
+);
+
+-- Insert sample data
+INSERT INTO ORDERS VALUES (1, 'P');
+INSERT INTO ORDERS VALUES (2, 'S');
+INSERT INTO ORDERS VALUES (3, 'D');
+INSERT INTO ORDERS VALUES (4, 'P');
+-------------------------------------------
+SELECT order_id,
+       status,
+       DECODE(status,
+              'P', 'Pending',
+              'S', 'Shipped',
+              'D', 'Delivered',
+              'Unknown') AS status_full
+FROM ORDERS;
+---------------------------------------------------
