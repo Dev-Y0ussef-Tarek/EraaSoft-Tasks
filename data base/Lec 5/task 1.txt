@@ -1,0 +1,19 @@
+CREATE TABLE Player (
+    id INT NOT NULL UNIQUE,
+    name VARCHAR(100) UNIQUE,
+    age INT
+);
+------------------------------------
+CREATE TABLE Manager (
+    id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    salary DECIMAL(10,2),
+    CONSTRAINT uq_manager UNIQUE (id, name)
+);
+-----------------------------------------------
+CREATE TABLE Manager (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT
+);
+-------------------------------------------------
