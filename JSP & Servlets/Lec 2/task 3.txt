@@ -1,0 +1,54 @@
+start.html
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Place</title>
+</head>
+<body>
+    <h2>Enter Your Favorite Place</h2>
+    <form action="homepage.jsp" method="post">
+        <label for="place">Favorite Place:</label>
+        <input type="text" id="place" name="place" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+------------------------------------------------------------------------
+homepage.jsp
+--------------
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String favPlace = request.getParameter("place");
+
+
+    if (favPlace != null) {
+        Cookie cookie = new Cookie("favPlace", favPlace);
+        cookie.setMaxAge(60 * 60 * 24 * 30); 
+        response.addCookie(cookie);
+    }
+
+    String savedPlace = "fav place"; 
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie c : cookies) {
+            if ("favPlace".equals(c.getName())) {
+                savedPlace = c.getValue();
+                break;
+            }
+        }
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Welcome to Home Page</h2>
+    <p>Your favorite place is: <b><%= savedPlace %></b></p>
+
+ </body>
+</html>

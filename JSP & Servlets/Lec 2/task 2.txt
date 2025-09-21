@@ -1,0 +1,39 @@
+order.jsp
+-----------
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Food</title>
+</head>
+<body>
+    <h2>Order Your Food</h2>
+    <form action="allorders.jsp" method="post">
+        <label>Food Item:</label>
+        <input type="text" id="food" name="food" required>
+        <input type="submit" value="Add Order">
+    </form>
+</body>
+</html>
+---------------------------------------------------------------------------------------------
+allorders.jsp
+---------------
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%
+    List<String> orders = (List<String>) session.getAttribute("orders");
+    if (orders == null) {
+        orders = new ArrayList<String>();
+        session.setAttribute("orders", orders);
+    }
+
+        String newOrder = request.getParameter("food");
+    if (newOrder != null) {
+        orders.add(newOrder);
+    }
+
+	for (String order : orders) {
+	   order}
+%>
+----------------------------------------------------------------------------------------------
