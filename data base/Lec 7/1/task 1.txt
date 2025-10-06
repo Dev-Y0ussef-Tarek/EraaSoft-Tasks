@@ -1,0 +1,40 @@
+SELECT EMPLOYEE_NAME, DEPARTMENT_NAME
+FROM EMPLOYEES
+NATURAL JOIN DEPARTMENTS;
+----------------------------------------------------------
+SELECT ORDER_ID, ORDER_DATE, CUSTOMER_NAME
+FROM ORDERS
+NATURAL JOIN CUSTOMERS;
+------------------------------------------------------------
+SELECT STUDENT_NAME, COURSE_NAME
+FROM STUDENTS
+NATURAL JOIN COURSES;
+----------------------------------------------------------
+SELECT PROJECT_NAME, EMPLOYEE_NAME
+FROM PROJECTS
+NATURAL JOIN EMPLOYEES;
+------------------------------------------------------------
+SELECT INVOICE_ID, PRODUCT_NAME, QUANTITY, UNIT_PRICE
+FROM INVOICES
+NATURAL JOIN PRODUCTS;
+------------------------------------------------------
+SELECT BOOK_TITLE, AUTHOR_NAME
+FROM BOOKS
+NATURAL JOIN AUTHORS;
+-------------------------------------------------------
+SELECT CLASS_ID, CLASS_TIME, INSTRUCTOR_NAME
+FROM CLASS_SCHEDULES
+NATURAL JOIN INSTRUCTORS;
+-----------------------------------------------------------------
+SELECT SUPPLIER_NAME, PRODUCT_NAME
+FROM SUPPLIERS
+NATURAL JOIN PRODUCTS;
+--------------------------------------------------------------------
+SELECT ORDER_ID, CUSTOMER_NAME, SHIP_DATE, SHIP_ADDRESS
+FROM ORDERS
+NATURAL JOIN SHIPPING;
+--------------------------------------------------------------------
+SELECT EMPLOYEE_NAME, JOB_TITLE
+FROM EMPLOYEES
+NATURAL JOIN JOBS;
+--------------------------------------------------------------------

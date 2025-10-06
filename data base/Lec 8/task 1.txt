@@ -1,0 +1,44 @@
+NATURAL JOIN
+-----------------
+SELECT COUNTRY_ID, COUNTRY_NAME, CITY, STREET_ADDRESS
+FROM LOCATIONS
+NATURAL JOIN COUNTRIES;
+-----------------------------------------------------------
+SELECT COUNTRY_ID, COUNTRY_NAME, CITY, STREET_ADDRESS
+FROM LOCATIONS
+JOIN COUNTRIES USING (COUNTRY_ID);
+-----------------------------------------------------------------
+SELECT l.COUNTRY_ID, c.COUNTRY_NAME, l.CITY, l.STREET_ADDRESS
+FROM LOCATIONS l
+JOIN COUNTRIES c
+ON l.COUNTRY_ID = c.COUNTRY_ID;
+------------------------------------------------------------------
+SELECT l.COUNTRY_ID, c.COUNTRY_NAME, l.CITY, l.STREET_ADDRESS
+FROM LOCATIONS l
+INNER JOIN COUNTRIES c
+ON l.COUNTRY_ID = c.COUNTRY_ID;
+----------------------------------------------------------------------
+SELECT l.COUNTRY_ID, c.COUNTRY_NAME, l.CITY, l.STREET_ADDRESS
+FROM LOCATIONS l
+LEFT JOIN COUNTRIES c
+ON l.COUNTRY_ID = c.COUNTRY_ID;
+-----------------------------------------------------------------------
+SELECT l.COUNTRY_ID, c.COUNTRY_NAME, l.CITY, l.STREET_ADDRESS
+FROM LOCATIONS l
+RIGHT JOIN COUNTRIES c
+ON l.COUNTRY_ID = c.COUNTRY_ID;
+--------------------------------------------------------------------------
+SELECT l.COUNTRY_ID, c.COUNTRY_NAME, l.CITY, l.STREET_ADDRESS
+FROM LOCATIONS l
+FULL JOIN COUNTRIES c
+ON l.COUNTRY_ID = c.COUNTRY_ID;
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

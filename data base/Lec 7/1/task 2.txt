@@ -1,0 +1,41 @@
+SELECT EMPLOYEE_NAME, DEPARTMENT_NAME
+FROM EMPLOYEES
+JOIN DEPARTMENTS USING (DEPARTMENT_ID);
+-------------------------------------------------------
+SELECT ORDER_ID, ORDER_DATE, CUSTOMER_NAME
+FROM ORDERS
+JOIN CUSTOMERS USING (CUSTOMER_ID);
+---------------------------------------------------
+SELECT PRODUCT_NAME, SUPPLIER_NAME
+FROM PRODUCTS
+JOIN SUPPLIERS USING (SUPPLIER_ID);
+-----------------------------------------------------
+SELECT STUDENT_NAME, COURSE_TITLE
+FROM STUDENTS
+JOIN ENROLLMENTS USING (STUDENT_ID)
+JOIN COURSES USING (COURSE_ID);
+---------------------------------------------------------
+SELECT INVOICE_ID, PRODUCT_NAME
+FROM INVOICES
+JOIN PRODUCTS USING (PRODUCT_ID);
+-------------------------------------------------------------
+SELECT PROJECT_NAME, EMPLOYEE_NAME
+FROM PROJECTS
+JOIN EMPLOYEES USING (PROJECT_ID);
+--------------------------------------------------------------------
+SELECT AUTHOR_NAME, BOOK_TITLE
+FROM AUTHORS
+JOIN BOOKS USING (AUTHOR_ID);
+----------------------------------------------------------------
+SELECT ORDER_ID, EMPLOYEE_NAME, ORDER_DATE, TOTAL_AMOUNT
+FROM SALES_ORDERS
+JOIN EMPLOYEES USING (EMPLOYEE_ID);
+------------------------------------------------------------------
+SELECT COURSE_ID, CLASS_TIME, INSTRUCTOR_NAME
+FROM COURSE_SCHEDULES
+JOIN INSTRUCTORS USING (INSTRUCTOR_ID);
+---------------------------------------------------------------------
+SELECT TRANSACTION_ID, ACCOUNT_HOLDER_NAME, AMOUNT, TRANSACTION_DATE
+FROM TRANSACTIONS
+JOIN ACCOUNTS USING (ACCOUNT_ID);
+-----------------------------------------------------------------------------

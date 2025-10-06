@@ -1,0 +1,41 @@
+SELECT EMPLOYEE_ID, JOB_ID, JOB_TITLE, START_DATE, END_DATE
+FROM JOB_HISTORY
+NATURAL JOIN JOBS;
+----------------------------------------------------
+SELECT EMPLOYEE_ID, JOB_ID, JOB_TITLE, START_DATE, END_DATE
+FROM JOB_HISTORY
+JOIN JOBS USING (JOB_ID);
+--------------------------------------------------------------
+SELECT h.EMPLOYEE_ID, h.JOB_ID, j.JOB_TITLE, h.START_DATE, h.END_DATE
+FROM JOB_HISTORY h
+JOIN JOBS j
+ON h.JOB_ID = j.JOB_ID;
+-------------------------------------------------------------------------
+SELECT h.EMPLOYEE_ID, h.JOB_ID, j.JOB_TITLE, h.START_DATE, h.END_DATE
+FROM JOB_HISTORY h
+INNER JOIN JOBS j
+ON h.JOB_ID = j.JOB_ID;
+------------------------------------------------------------------------
+SELECT h.EMPLOYEE_ID, h.JOB_ID, j.JOB_TITLE, h.START_DATE, h.END_DATE
+FROM JOB_HISTORY h
+LEFT JOIN JOBS j
+ON h.JOB_ID = j.JOB_ID;
+-------------------------------------------------------------------------------
+SELECT h.EMPLOYEE_ID, h.JOB_ID, j.JOB_TITLE, h.START_DATE, h.END_DATE
+FROM JOB_HISTORY h
+RIGHT JOIN JOBS j
+ON h.JOB_ID = j.JOB_ID;
+-----------------------------------------------
+SELECT h.EMPLOYEE_ID, h.JOB_ID, j.JOB_TITLE, h.START_DATE, h.END_DATE
+FROM JOB_HISTORY h
+FULL JOIN JOBS j
+ON h.JOB_ID = j.JOB_ID;
+
+
+
+
+
+
+
+
+

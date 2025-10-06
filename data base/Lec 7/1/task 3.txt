@@ -1,0 +1,58 @@
+SELECT e.FIRST_NAME || ' ' || e.LAST_NAME AS EMPLOYEE_NAME,
+       m.FIRST_NAME || ' ' || m.LAST_NAME AS MANAGER_NAME
+FROM EMPLOYEES e
+JOIN EMPLOYEES m
+ON e.MANAGER_ID = m.EMPLOYEE_ID;
+--------------------------------------------------------------------
+SELECT c.NAME AS CUSTOMER_NAME,
+       e.NAME AS SALESPERSON_NAME
+FROM CUSTOMERS c
+JOIN EMPLOYEES e
+ON c.SALES_REP_ID = e.EMPLOYEE_ID;
+-----------------------------------------------
+SELECT o.ORDER_ID, d.PRODUCT_ID
+FROM ORDERS o
+JOIN ORDER_DETAILS d
+ON o.ORDER_ID = d.ORDER_ID;
+----------------------------------------------------
+SELECT s.NAME AS STUDENT_NAME,
+       i.NAME AS INSTRUCTOR_NAME
+FROM STUDENTS s
+JOIN INSTRUCTORS i
+ON s.INSTRUCTOR_ID = i.INSTRUCTOR_ID;
+------------------------------------------------------
+SELECT e.EMPLOYEE_NAME, e.SALARY, d.BUDGET
+FROM EMPLOYEES e
+JOIN DEPARTMENTS d
+ON e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+--------------------------------------------------------
+SELECT p.NAME AS PROJECT_NAME,
+       t.NAME AS TASK_NAME
+FROM PROJECTS p
+JOIN TASKS t
+ON p.PROJECT_ID = t.PROJECT_ID;
+----------------------------------------------
+SELECT c.COURSE_NAME, c.COURSE_DATE, e.EXAM_DATE
+FROM COURSES c
+JOIN EXAMS e
+ON c.COURSE_ID = e.COURSE_ID;
+------------------------------------------------------
+SELECT p.NAME AS PRODUCT_NAME,
+       c.NAME AS CATEGORY_NAME
+FROM PRODUCTS p
+JOIN CATEGORIES c
+ON p.CATEGORY_ID = c.CATEGORY_ID;
+-----------------------------------------------------------
+SELECT b.TITLE AS BOOK_TITLE,
+       p.NAME AS PUBLISHER_NAME
+FROM BOOKS b
+JOIN PUBLISHERS p
+ON b.PUBLISHER_ID = p.PUBLISHER_ID;
+-------------------------------------------------------------
+SELECT e.EMPLOYEE_NAME,
+       d.LOCATION AS DEPARTMENT_LOCATION
+FROM EMPLOYEES e
+JOIN DEPARTMENTS d
+ON e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+
